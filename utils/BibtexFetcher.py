@@ -20,6 +20,13 @@ DEFAULT_TITLE_SELECTOR = """
 #main ul.publ-list>li.entry.article>div.data>span.title
 """
 
+DEFAULT_PAPER_SELECTOR_FUN = lambda page: page('div#main>header').filter(
+    lambda i, this: pq(this)('h2')
+    and not ('poster' in pq(this)('h2').html().lower()
+             or 'demo' in pq(this)('h2').html().lower())
+).next("""ul.publ-list>li.entry.inproceedings,
+       ul.publ-list>li.entry.article""")
+
 DEFAULT_BIB_CACHE_DIR = 'bib'
 
 class BibtexFetcher:
@@ -28,10 +35,12 @@ class BibtexFetcher:
                  bib_url_template=DEFAULT_BIB_URL_TEMPLATE,
                  bib_url_selector=DEFAULT_BIB_URL_SELECTOR,
                  title_selector=DEFAULT_TITLE_SELECTOR,
+                 paper_selector_fun=DEFAULT_PAPER_SELECTOR_FUN,
                  bib_cache_dir=DEFAULT_BIB_CACHE_DIR):
         self.bib_url_template = bib_url_template
         self.bib_url_selector = bib_url_selector
         self.title_selector = title_selector
+        self.paper_selector_fun = paper_selector_fun
         self.bib_cache_dir = bib_cache_dir
 
     def fetchBibtex(self, url):
@@ -45,11 +54,13 @@ class BibtexFetcher:
 
         page = pq(url=url,
                 opener=lambda url, **kw: urllib2.urlopen(url).read())
-        bibs = page(self.bib_url_selector)
+        # bibs = page(self.bib_url_selector)
+        bibs = self.paper_selector_fun(page)
         bib_urls = bibs.map(lambda i, e: self.bib_url_template % pq(e).attr('id'))
 
         with open(os.path.join(self.bib_cache_dir, name), 'w') as f:
             for bib_url in bib_urls:
+                print '\tFetching bib item from %s' % bib_url
                 f.write(urllib2.urlopen(bib_url).read())
             f.close()
 
@@ -78,6 +89,7 @@ class BibtexFetcher:
         return titles
 
     def report(self, urls):
+        """Generate statsitical report"""
         titles = self.getBatchTitles(urls)
         try:
             nltk.word_tokenize('')
@@ -95,6 +107,7 @@ class BibtexFetcher:
         return length_hist, len(titles)
 
     def plotLengthHist(self, urls):
+        """Print the Histogram of the report"""
         report = self.report(urls)
         length_hist = report[0]
         title_number = report[1]
