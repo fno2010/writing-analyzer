@@ -1,0 +1,408 @@
+body:
+  introduction:
+  - content:
+    - clauses: 1
+      content: Computer networks are complex and difficult to manage.
+      length: 8
+      modal_count: 0
+      modals: []
+      move: 1.1c
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: These networks have many kinds of equipment, from routers and switches
+        to middleboxes such as firewalls, network address translators, server load
+        balancers, and intrusion detection systems.
+      length: 26
+      modal_count: 0
+      modals: []
+      move: 1.1c
+      sentence_no: 2
+      tense: SP
+    - clauses: 2
+      content: Routers and switches run complex, distributed control software that
+        is typically closed and proprietary.
+      length: 14
+      modal_count: 0
+      modals: []
+      move: 1.1c
+      sentence_no: 3
+      tense: SP
+    - clauses: 2
+      content: The software implements network protocols that undergo years of standardization
+        and interoperability testing.
+      length: 13
+      modal_count: 0
+      modals: []
+      move: 1.1c
+      sentence_no: 4
+      tense: SP
+    - clauses: 2
+      content: Network administrators typically configure individual network devices
+        using configuration interfaces that vary across vendors and even across different
+        products from the same vendor.
+      length: 23
+      modal_count: 0
+      modals: []
+      move: 1.1c
+      sentence_no: 5
+      tense: SP
+    - clauses: 2
+      content: Although some network-management tools offer a central vantage point
+        for configuring the network, these systems still operate at the level of individual
+        protocols, mechanisms, and configuration interfaces.
+      length: 27
+      modal_count: 0
+      modals: []
+      move: 2.1a
+      sentence_no: 6
+      tense: SP
+    - clauses: 1
+      content: This mode of operation has slowed innovation, increased complexity,
+        and inflated both the capital and operational costs of running a network.
+      length: 21
+      modal_count: 0
+      modals: []
+      move: 2.1a
+      sentence_no: 7
+      tense: SP
+    paragraph_no: 1
+  - content:
+    - clauses: 2
+      content: Software Defined Networking (SDN) is changing the way we design and
+        manage networks.
+      length: 13
+      modal_count: 0
+      modals: []
+      move: '1.3'
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: SDN has two defining characteristics.
+      length: 5
+      modal_count: 0
+      modals: []
+      move: 1.1a
+      sentence_no: 2
+      tense: SP
+    - clauses: 5
+      content: First, an SDN separates the control plane (which decides how to handle
+        the traffic) from the data plane (which forwards traffic according to decisions
+        that the control plane makes).
+      length: 29
+      modal_count: 0
+      modals: []
+      move: 1.1a
+      sentence_no: 3
+      tense: SP
+    - clauses: 2
+      content: Second, an SDN consolidates the control plane, so that a single software
+        control program controls multiple dataplane elements.
+      length: 18
+      modal_count: 0
+      modals: []
+      move: 1.1a
+      sentence_no: 4
+      tense: SP
+    - clauses: 1
+      content: "The SDN control plane exercises direct control over the state in the\
+        \ network\u2019s data-plane elements (i.e., routers, switches, and other middleboxes)\
+        \ via a well-defined Application Programming Interface (API)."
+      length: 28
+      modal_count: 0
+      modals: []
+      move: 1.1a
+      sentence_no: 5
+      tense: SP
+    - clauses: 1
+      content: OpenFlow [51] is a prominent example of such an API.
+      length: 9
+      modal_count: 0
+      modals: []
+      move: 1.1a
+      sentence_no: 6
+      tense: SP
+    - clauses: 1
+      content: An OpenFlow switch has one or more tables of packet-handling rules.
+      length: 11
+      modal_count: 0
+      modals: []
+      move: 1.1a
+      sentence_no: 7
+      tense: SP
+    - clauses: 2
+      content: Each rule matches a subset of traffic and performs certain actions
+        on the traffic that matches a rule; actions include dropping, forwarding,
+        or flooding.
+      length: 24
+      modal_count: 0
+      modals: []
+      move: 1.1a
+      sentence_no: 8
+      tense: SP
+    - clauses: 1
+      content: Depending on the rules installed by a controller application, an OpenFlow
+        switch can behave like a router, switch, firewall, network address translator,
+        or something in between.
+      length: 26
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: 1.1a
+      sentence_no: 9
+      tense: SP
+    paragraph_no: 2
+  - content:
+    - clauses: 1
+      content: Over the past few years, SDN has gained significant traction in industry.
+      length: 12
+      modal_count: 0
+      modals: []
+      move: 1.2b
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: Many commercial switches support the OpenFlow API.
+      length: 7
+      modal_count: 0
+      modals: []
+      move: 1.2b
+      sentence_no: 2
+      tense: SP
+    - clauses: 3
+      content: Initial vendors that supported OpenFlow included HP, NEC, and Pronto;
+        this list has since expanded dramatically.
+      length: 16
+      modal_count: 0
+      modals: []
+      move: 1.1b
+      sentence_no: 3
+      tense: SP
+    - clauses: 1
+      content: Many different controller platforms have emerged [23, 28, 37, 46, 55,
+        63, 80].
+      length: 6
+      modal_count: 0
+      modals: []
+      move: 1.1b
+      sentence_no: 4
+      tense: SP
+    - clauses: 1
+      content: Programmers have used these platforms to create many applications,
+        such as dynamic access control [16, 53], server load balancing [39, 81], network
+        virtualization [54,67], energy-efficient networking [42], and seamless virtual-machine
+        migration and user mobility [24].
+      length: 28
+      modal_count: 0
+      modals: []
+      move: 1.1b
+      sentence_no: 5
+      tense: SP
+    - clauses: 1
+      content: "Early commercial successes, such as Google\u2019s wide-area traffic-management\
+        \ system [44] and Nicira\u2019s Network Virtualization Platform [54], have\
+        \ garnered significant industry attention."
+      length: 19
+      modal_count: 0
+      modals: []
+      move: 1.1b
+      sentence_no: 6
+      tense: SP
+    - clauses: 1
+      content: "Many of the world\u2019s largest information-technology companies\
+        \ (e.g., cloud providers, carriers, equipment vendors, and financial-services\
+        \ firms) have joined SDN industry consortia like the Open Networking Foundation\
+        \ [57] and the Open Daylight initiative [56]."
+      length: 31
+      modal_count: 0
+      modals: []
+      move: 1.1b
+      sentence_no: 7
+      tense: SP
+    paragraph_no: 3
+  - content:
+    - clauses: 2
+      content: Although the excitement about SDN has become more palpable during the
+        past few years, many of the ideas underlying SDN have evolved over the past
+        twenty years (or more!).
+      length: 30
+      modal_count: 0
+      modals: []
+      move: 2.1b
+      sentence_no: 1
+      tense: SP
+    - clauses: 2
+      content: In some ways, SDN revisits ideas from early telephony networks, which
+        used a clear separation of control and data planes to simplify network management
+        and the deployment of new services.
+      length: 30
+      modal_count: 0
+      modals: []
+      move: 2.1b
+      sentence_no: 2
+      tense: SP
+    - clauses: 2
+      content: Yet, open interfaces like OpenFlow enable more innovation in controller
+        platforms and applications than was possible on closed networks designed for
+        a narrow range of telephony services.
+      length: 27
+      modal_count: 0
+      modals: []
+      move: 2.1b
+      sentence_no: 3
+      tense: SP
+    - clauses: 2
+      content: In other ways, SDN resembles past research on active networking, which
+        articulated a vision for programmable networks, albeit with an emphasis on
+        programmable data planes.
+      length: 25
+      modal_count: 0
+      modals: []
+      move: 2.1b
+      sentence_no: 4
+      tense: SP
+    - clauses: 1
+      content: SDN also relates to previous work on separating the control and data
+        planes in computer networks.
+      length: 16
+      modal_count: 0
+      modals: []
+      move: 2.1b
+      sentence_no: 5
+      tense: SP
+    paragraph_no: 4
+  - content:
+    - clauses: 1
+      content: In this article, we present an intellectual history of programmable
+        networks culminating in present-day SDN.
+      length: 15
+      modal_count: 0
+      modals: []
+      move: 3.1b
+      sentence_no: 1
+      tense: SP
+    - clauses: 2
+      content: "We capture the evolution of key ideas, the application \u201Cpulls\u201D\
+        \ and technology \u201Cpushes\u201D of the day, and lessons that can help\
+        \ guide the next set of SDN innovations."
+      length: 28
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: '3.2'
+      sentence_no: 2
+      tense: SP
+    - clauses: 1
+      content: Along the way, we debunk myths and misconceptions about each of the
+        technologies and clarify the relationship between SDN and related technologies,
+        such as network virtualization.
+      length: 26
+      modal_count: 0
+      modals: []
+      move: '3.2'
+      sentence_no: 3
+      tense: SP
+    - clauses: 3
+      content: "Our history begins twenty years ago, just as the Internet takes off,\
+        \ at a time when the Internet\u2019s amazing success exacerbated the challenges\
+        \ of managing and evolving the network infrastructure."
+      length: 30
+      modal_count: 0
+      modals: []
+      move: '3.2'
+      sentence_no: 4
+      tense: SP
+    - clauses: 3
+      content: We focus on innovations in the networking community (whether by researchers,
+        standards bodies, or companies), although we recognize that these innovations
+        were in some cases catalyzed by progress in other areas, including distributed
+        systems, operating systems, and programming languages.
+      length: 39
+      modal_count: 0
+      modals: []
+      move: '3.2'
+      sentence_no: 5
+      tense: SP
+    - clauses: 1
+      content: The efforts to create a programmable network infrastructure also clearly
+        relate to the long thread of work on supporting programmable packet processing
+        at high speeds [5, 21, 38, 45, 49, 71, 73].
+      length: 25
+      modal_count: 0
+      modals: []
+      move: '3.4'
+      sentence_no: 6
+      tense: SP
+    paragraph_no: 5
+  - content:
+    - clauses: 4
+      content: Before we begin our story, we caution the reader that any history is
+        incomplete and more nuanced than a single storyline might suggest.
+      length: 23
+      modal_count: 1
+      modals: [!!python/unicode 'might']
+      move: '3.3'
+      sentence_no: 1
+      tense: SP
+    - clauses: 2
+      content: "In particular, much of the work that we describe in this article predates\
+        \ the usage of the term \u201CSDN\u201D, coined in an article [36] about the\
+        \ OpenFlow project at Stanford."
+      length: 29
+      modal_count: 0
+      modals: []
+      move: '3.3'
+      sentence_no: 2
+      tense: SP
+    - clauses: 2
+      content: "The etymology of the term \u201CSDN\u201D is itself complex, and,\
+        \ although the term was initially used to describe Stanford\u2019s OpenFlow\
+        \ project, the definition has since expanded to include a much wider array\
+        \ of technologies."
+      length: 34
+      modal_count: 0
+      modals: []
+      move: '3.3'
+      sentence_no: 3
+      tense: SP
+    - clauses: 2
+      content: "(The term has even been sometimes co-opted by industry marketing departments\
+        \ to describe unrelated ideas that predated Stanford\u2019s SDN project.)"
+      length: 20
+      modal_count: 0
+      modals: []
+      move: '3.3'
+      sentence_no: 4
+      tense: SP
+    - clauses: 3
+      content: Thus, instead of attempting to attribute direct influence between projects,
+        we instead highlight the evolution of and relationships between the ideas
+        that represent the defining characteristics of SDN, regardless of whether
+        or not they directly influenced specific subsequent research.
+      length: 39
+      modal_count: 0
+      modals: []
+      move: '3.2'
+      sentence_no: 5
+      tense: SP
+    - clauses: 5
+      content: Some of these early ideas may not have directly influenced later ones,
+        but we believe that the connections between the concepts that we outline are
+        noteworthy, and that these projects of the past may yet offer new lessons
+        for SDN in the future.
+      length: 43
+      modal_count: 2
+      modals: [!!python/unicode 'may']
+      move: '3.5'
+      sentence_no: 6
+      tense: SP
+    paragraph_no: 6
+meta:
+  author: ['Feamster, Nick', 'Rexford, Jennifer', 'Zegura, Ellen']
+  doi: 10.1145/2602204.2602219
+  issn: 01464833
+  journal: ACM Sigcomm Computer Communication
+  number: 2
+  pages: 87-98
+  title: 'The Road to SDN: An Intellectual History of Programmable Networks'
+  url: http://dl.acm.org/citation.cfm?id=2602204.2602219
+  volume: 44
+  year: 2014

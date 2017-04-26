@@ -1,0 +1,116 @@
+meta:
+  author:
+    - Pfaff, Ben
+    - Pettit, Justin
+    - Koponen, Teemu
+    - Jackson, Ethan J
+    - Zhou, Andy
+    - Rajahalme, Jarno
+    - Gross, Jesse
+    - Wang, Alex
+    - Stringer, Joe
+    - Shelar, Pravin
+    - Amidon, Keith
+    - Casado, Martín
+  title: The Design and Implementation of Open vSwitch
+  booktitle: 12th USENIX Symposium on Networked Systems Design and Implementation, NSDI 15, Oakland, CA, USA, May 4-6, 2015
+  pages: 117-130
+  publisher: USENIX Association
+  year: 2015
+  url: https://www.usenix.org/conference/nsdi15/technical-sessions/presentation/pfaff
+  biburl: http://dblp.uni-trier.de/rec/bib/conf/nsdi/PfaffPKJZRGWSSA15
+  bibsource: dblp computer science bibliography, http://dblp.org
+body:
+  introduction:
+    - paragraph_no: 1
+      content:
+        - sentence_no: 1
+          content: Virtualization has changed the way we do computing over the past 15 years; for instance, many datacenters are entirely virtualized to provide quick provisioning, spillover to the cloud, and improved availability during periods of disaster recovery.
+          move: !!str 1.2b
+        - sentence_no: 2
+          content: While virtualization is still to reach all types of workloads, the number of virtual machines has already exceeded the number of servers and further virtualization shows no signs of stopping [1].
+          move: !!str 1.2b
+    - paragraph_no: 2
+      content:
+        - sentence_no: 1
+          content: The rise of server virtualization has brought with it a fundamental shift in datacenter networking.
+          move: !!str 1.3
+        - sentence_no: 2
+          content: A new network access layer has emerged in which most network ports are virtual, not physical [5] -- and therefore, the first hop switch for workloads increasingly often resides within the hypervisor.
+          move: !!str 1.3
+        - sentence_no: 3
+          content: In the early days, these hypervisor “vSwitches” were primarily concerned with providing basic network connectivity.
+          move: !!str 1.3
+        - sentence_no: 4
+          content: In effect, they simply mimicked their ToR cousins by extending physical L2 networks to resident virtual machines.
+          move: !!str 2.1a
+        - sentence_no: 5
+          content: "As virtualized workloads proliferated, limits of this approach became evident: reconfiguring and preparing a physical network for new workloads slows their provisioning, and coupling workloads with physical L2 segments severely limits their mobility and scalability to that of the underlying network."
+          move: !!str 2.1a
+    - paragraph_no: 3
+      content:
+        - sentence_no: 1
+          content: These pressures resulted in the emergence of network virtualization [19].
+          move: !!str 2.1a
+        - sentence_no: 2
+          content: In network virtualization, virtual switches become the primary provider of network services for VMs, leaving physical datacenter networks with transportation of IP tunneled packets between hypervisors.
+          move: !!str 2.1c
+        - sentence_no: 3
+          content: This approach allows the virtual networks to be decoupled from their underlying physical networks, and by leveraging the flexibility of general purpose processors, virtual switches can provide VMs, their tenants, and administrators with logical network abstractions, services and tools identical to dedicated physical networks.
+          move: !!str 2.1c
+    - paragraph_no: 4
+      content:
+        - sentence_no: 1
+          content: Network virtualization demands a capable virtual switch -- forwarding functionality must be wired on a per virtual port basis to match logical network abstractions configured by administrators.
+          move: !!str 2.1a
+        - sentence_no: 2
+          content: Implementation of these abstractions, across hypervisors, also greatly benefits from fine-grained centralized coordination.
+          move: !!str 2.1e
+        - sentence_no: 3
+          content: This approach starkly contrasts with early virtual switches for which a static, mostly hard-coded forwarding pipelines had been completely sufficient to provide virtual machines with L2 connectivity to physical networks.
+          move: !!str 2.1e
+    - paragraph_no: 5
+      content:
+        - sentence_no: 1
+          content: "It was this context: the increasing complexity of virtual networking, emergence of network virtualization, and limitations of existing virtual switches, that allowed Open vSwitch to quickly gain popularity."
+          move: !!str 3.5
+        - sentence_no: 2
+          content: Today, on Linux, its original platform, Open vSwitch works with most hypervisors and container systems, including Xen, KVM, and Docker.
+          move: !!str 3.5
+        - sentence_no: 3
+          content: Open vSwitch also works “out of the box” on the FreeBSD and NetBSD operating systems and ports to the VMware ESXi and Microsoft Hyper-V hypervisors are underway.
+          move: !!str 3.5
+    - paragraph_no: 6
+      content:
+        - sentence_no: 1
+          content: In this paper, we describe the design and implementation of Open vSwitch [26, 29].
+          move: !!str 3.1b
+        - sentence_no: 2
+          content: The key elements of its design, revolve around the performance required by the production environments in which Open vSwitch is commonly deployed, and the programmability demanded by network virtualization.
+          move: !!str 3.2
+        - sentence_no: 3
+          content: Unlike traditional network appliances, whether software or hardware, which achieve high performance through specialization, Open vSwitch, by contrast, is designed for flexibility and general-purpose usage.
+          move: !!str 3.2
+        - sentence_no: 4
+          content: It must achieve high performance without the luxury of specialization, adapting to differences in platforms supported, all while sharing resources with the hypervisor and its workloads.
+          move: !!str 3.2
+        - sentence_no: 5
+          content: Therefore, this paper foremost concerns this tension -- how Open vSwitch obtains high performance without sacrificing generality.
+          move: !!str 3.1a
+    - paragraph_no: 7
+      content:
+        - sentence_no: 1
+          content: The remainder of the paper is organized as follows.
+          move: !!str 3.7
+        - sentence_no: 2
+          content: Section 2 provides further background about virtualized environments while Section 3 describes the basic design of Open vSwitch.
+          move: !!str 3.7
+        - sentence_no: 3
+          content: Afterward, Sections 4, 5, and 6 describe how the Open vSwitch design optimizes for the require- ments of virtualized environments through flow caching, how caching has wide-reaching implications for the en- tire design, including its packet classifier, and how Open vSwitch manages its flowcaches.
+          move: !!str 3.7
+        - sentence_no: 4
+          content: Section 7 then evaluates the performance of Open vSwitch through classification and caching micro-benchmarks but also provides a view of Open vSwitch performance in a multi-tenant datacen- ter.
+          move: !!str 3.7
+        - sentence_no: 5
+          content: Before concluding, we discuss ongoing, future and related work in Section 8.
+          move: !!str 3.7

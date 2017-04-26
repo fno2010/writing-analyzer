@@ -1,0 +1,148 @@
+meta:
+  author:
+    - Feamster, Nick
+    - Rexford, Jennifer
+    - Zegura, Ellen
+  doi: 10.1145/2602204.2602219
+  issn: 01464833
+  journal: ACM Sigcomm Computer Communication
+  number: 2
+  pages: 87-98
+  title: "The Road to SDN: An Intellectual History of Programmable Networks"
+  url: http://dl.acm.org/citation.cfm?id=2602204.2602219
+  volume: 44
+  year: 2014
+body:
+  introduction:
+    - paragraph_no: 1
+      content:
+        - sentence_no: 1
+          content: Computer networks are complex and difficult to manage.
+          move: !!str 1.1c
+        - sentence_no: 2
+          content: These networks have many kinds of equipment, from routers and switches to middleboxes such as firewalls, network address translators, server load balancers, and intrusion detection systems.
+          move: !!str 1.1c
+        - sentence_no: 3
+          content: Routers and switches run complex, distributed control software that is typically closed and proprietary.
+          move: !!str 1.1c
+        - sentence_no: 4
+          content: The software implements network protocols that undergo years of standardization and interoperability testing.
+          move: !!str 1.1c
+        - sentence_no: 5
+          content: Network administrators typically configure individual network devices using configuration interfaces that vary across vendors and even across different products from the same vendor.
+          move: !!str 1.1c
+        - sentence_no: 6
+          content: Although some network-management tools offer a central vantage point for configuring the network, these systems still operate at the level of individual protocols, mechanisms, and configuration interfaces.
+          move: !!str 2.1a
+        - sentence_no: 7
+          content: This mode of operation has slowed innovation, increased complexity, and inflated both the capital and operational costs of running a network.
+          move: !!str 2.1a
+    - paragraph_no: 2
+      content:
+        - sentence_no: 1
+          content: Software Defined Networking (SDN) is changing the way we design and manage networks.
+          move: !!str 1.3
+        - sentence_no: 2
+          content: SDN has two defining characteristics.
+          move: !!str 1.1a
+        - sentence_no: 3
+          content: First, an SDN separates the control plane (which decides how to handle the traffic) from the data plane (which forwards traffic according to decisions that the control plane makes).
+          move: !!str 1.1a
+        - sentence_no: 4
+          content: Second, an SDN consolidates the control plane, so that a single software control program controls multiple dataplane elements.
+          move: !!str 1.1a
+        - sentence_no: 5
+          content: The SDN control plane exercises direct control over the state in the network’s data-plane elements (i.e., routers, switches, and other middleboxes) via a well-defined Application Programming Interface (API).
+          move: !!str 1.1a
+        - sentence_no: 6
+          content: OpenFlow [51] is a prominent example of such an API.
+          move: !!str 1.1a
+        - sentence_no: 7
+          content: An OpenFlow switch has one or more tables of packet-handling rules.
+          move: !!str 1.1a
+        - sentence_no: 8
+          content: Each rule matches a subset of traffic and performs certain actions on the traffic that matches a rule; actions include dropping, forwarding, or flooding.
+          move: !!str 1.1a
+        - sentence_no: 9
+          content: Depending on the rules installed by a controller application, an OpenFlow switch can behave like a router, switch, firewall, network address translator, or something in between.
+          move: !!str 1.1a
+    - paragraph_no: 3
+      content:
+        - sentence_no: 1
+          content: Over the past few years, SDN has gained significant traction in industry.
+          move: !!str 1.2b
+        - sentence_no: 2
+          content: Many commercial switches support the OpenFlow API.
+          move: !!str 1.2b
+        - sentence_no: 3
+          content: Initial vendors that supported OpenFlow included HP, NEC, and Pronto; this list has since expanded dramatically.
+          move: !!str 1.1b
+        - sentence_no: 4
+          content: Many different controller platforms have emerged [23, 28, 37, 46, 55, 63, 80].
+          move: !!str 1.1b
+        - sentence_no: 5
+          content: Programmers have used these platforms to create many applications, such as dynamic access control [16, 53], server load balancing [39, 81], network virtualization [54,67], energy-efficient networking [42], and seamless virtual-machine migration and user mobility [24].
+          move: !!str 1.1b
+        - sentence_no: 6
+          content: Early commercial successes, such as Google’s wide-area traffic-management system [44] and Nicira’s Network Virtualization Platform [54], have garnered significant industry attention.
+          move: !!str 1.1b
+        - sentence_no: 7
+          content: Many of the world’s largest information-technology companies (e.g., cloud providers, carriers, equipment vendors, and financial-services firms) have joined SDN industry consortia like the Open Networking Foundation [57] and the Open Daylight initiative [56].
+          move: !!str 1.1b
+    - paragraph_no: 4
+      content:
+        - sentence_no: 1
+          content: Although the excitement about SDN has become more palpable during the past few years, many of the ideas underlying SDN have evolved over the past twenty years (or more!).
+          move: !!str 2.1b
+        - sentence_no: 2
+          content: In some ways, SDN revisits ideas from early telephony networks, which used a clear separation of control and data planes to simplify network management and the deployment of new services.
+          move: !!str 2.1b
+        - sentence_no: 3
+          content: Yet, open interfaces like OpenFlow enable more innovation in controller platforms and applications than was possible on closed networks designed for a narrow range of telephony services.
+          move: !!str 2.1b
+        - sentence_no: 4
+          content: In other ways, SDN resembles past research on active networking, which articulated a vision for programmable networks, albeit with an emphasis on programmable data planes.
+          move: !!str 2.1b
+        - sentence_no: 5
+          content: SDN also relates to previous work on separating the control and data planes in computer networks.
+          move: !!str 2.1b
+    - paragraph_no: 5
+      content:
+        - sentence_no: 1
+          content: In this article, we present an intellectual history of programmable networks culminating in present-day SDN.
+          move: !!str 3.1b
+        - sentence_no: 2
+          content: We capture the evolution of key ideas, the application “pulls” and technology “pushes” of the day, and lessons that can help guide the next set of SDN innovations.
+          move: !!str 3.2
+        - sentence_no: 3
+          content: Along the way, we debunk myths and misconceptions about each of the technologies and clarify the relationship between SDN and related technologies, such as network virtualization.
+          move: !!str 3.2
+        - sentence_no: 4
+          content: Our history begins twenty years ago, just as the Internet takes off, at a time when the Internet’s amazing success exacerbated the challenges of managing and evolving the network infrastructure.
+          move: !!str 3.2
+        - sentence_no: 5
+          content: We focus on innovations in the networking community (whether by researchers, standards bodies, or companies), although we recognize that these innovations were in some cases catalyzed by progress in other areas, including distributed systems, operating systems, and programming languages.
+          move: !!str 3.2
+        - sentence_no: 6
+          content: The efforts to create a programmable network infrastructure also clearly relate to the long thread of work on supporting programmable packet processing at high speeds [5, 21, 38, 45, 49, 71, 73].
+          move: !!str 3.4
+    - paragraph_no: 6
+      content:
+        - sentence_no: 1
+          content: Before we begin our story, we caution the reader that any history is incomplete and more nuanced than a single storyline might suggest.
+          move: !!str 3.3
+        - sentence_no: 2
+          content: In particular, much of the work that we describe in this article predates the usage of the term “SDN”, coined in an article [36] about the OpenFlow project at Stanford.
+          move: !!str 3.3
+        - sentence_no: 3
+          content: The etymology of the term “SDN” is itself complex, and, although the term was initially used to describe Stanford’s OpenFlow project, the definition has since expanded to include a much wider array of technologies.
+          move: !!str 3.3
+        - sentence_no: 4
+          content: (The term has even been sometimes co-opted by industry marketing departments to describe unrelated ideas that predated Stanford’s SDN project.)
+          move: !!str 3.3
+        - sentence_no: 5
+          content: Thus, instead of attempting to attribute direct influence between projects, we instead highlight the evolution of and relationships between the ideas that represent the defining characteristics of SDN, regardless of whether or not they directly influenced specific subsequent research.
+          move: !!str 3.2
+        - sentence_no: 6
+          content: Some of these early ideas may not have directly influenced later ones, but we believe that the connections between the concepts that we outline are noteworthy, and that these projects of the past may yet offer new lessons for SDN in the future.
+          move: !!str 3.5

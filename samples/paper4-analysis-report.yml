@@ -1,0 +1,279 @@
+body:
+  introduction:
+  - content:
+    - clauses: 2
+      content: There is a large and active research literature on novel packet scheduling
+        algorithms, from simple schemes such as priority scheduling [38], to more
+        complicated mechanisms for achieving fairness [20,34,39], to schemes that
+        help reduce tail latency [19] or flow completion time [10], and this short
+        list barely scratches the surface of past and current work.
+      length: 51
+      modal_count: 0
+      modals: []
+      move: 1.1b
+      sentence_no: 1
+      tense: SP
+    - clauses: 3
+      content: In this paper we do not add to this impressive collection of algorithms,
+        but instead ask if there is a single universal packet scheduling algorithm
+        that could obviate the need for new ones.
+      length: 33
+      modal_count: 1
+      modals: [!!python/unicode 'could']
+      move: 3.1a
+      sentence_no: 2
+      tense: SP
+    - clauses: 5
+      content: In this context, we consider a packet scheduling algorithm to be both
+        howpackets are served inside the network (based on their arrival times and
+        their packet headers) and how packet header fields are initialized and updated;
+        this definition includes all the classical scheduling algorithms (FIFO, LIFO,
+        priority, round-robin) as well as algorithms that incorporate dynamic packet
+        state [19, 44, 45].
+      length: 57
+      modal_count: 0
+      modals: []
+      move: 3.1b
+      sentence_no: 3
+      tense: SP
+    paragraph_no: 1
+  - content:
+    - clauses: 1
+      content: We can define a universal packet scheduling algorithm (hereafter UPS)
+        in twoways, depending on our viewpoint on the problem.
+      length: 19
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: 1.1a
+      sentence_no: 1
+      tense: SP
+    - clauses: 3
+      content: From a theoretical perspective, we call a packet scheduling algorithm
+        universal if it can replay any schedule (the set of times at which packets
+        arrive to and exit from the network) produced by any other scheduling algorithm.
+      length: 37
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: 1.1a
+      sentence_no: 2
+      tense: SP
+    - clauses: 6
+      content: This is not of practical interest, since such schedules are not typically
+        known in advance, but it offers a theoretically rigorous definition of universality
+        that (as we shall see) helps illuminate its fundamental limits (i.e., which
+        scheduling algorithms have the flexibility to serve as a UPS, and why).
+      length: 48
+      modal_count: 1
+      modals: [!!python/unicode 'shall']
+      move: 1.1a
+      sentence_no: 3
+      tense: SP
+    paragraph_no: 2
+  - content:
+    - clauses: 3
+      content: From a more practical perspective, we say a packet scheduling algorithm
+        is universal if it can achieve different desired performance objectives (such
+        as fairness, reducing tail latencies and minimizing flow completion times).
+      length: 32
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: 1.1a
+      sentence_no: 1
+      tense: SP
+    - clauses: 2
+      content: In particular, we require that the UPS should match the performance
+        of the best known scheduling algorithm for a given performance objective.
+      length: 22
+      modal_count: 1
+      modals: [!!python/unicode 'should']
+      move: 1.1a
+      sentence_no: 2
+      tense: SP
+    paragraph_no: 3
+  - content:
+    - clauses: 2
+      content: The notion of universality for packet scheduling might seem esoteric,
+        but we think it helps clarify some basic questions.
+      length: 19
+      modal_count: 1
+      modals: [!!python/unicode 'might']
+      move: 3.1c
+      sentence_no: 1
+      tense: SP
+    - clauses: 3
+      content: If there exists no UPS then we should expect to design new scheduling
+        algorithms as performance objectives evolve.
+      length: 18
+      modal_count: 1
+      modals: [!!python/unicode 'should']
+      move: 3.1c
+      sentence_no: 2
+      tense: SP
+    - clauses: 4
+      content: Moreover, this would make a strong argument for switches being equipped
+        with programmable packet schedulers so that such algorithms could be more
+        easily deployed (as argued in [42]; in fact, it was the eloquent argument
+        in this paper that caused us to initially ask the question about universality).
+      length: 47
+      modal_count: 2
+      modals: [!!python/unicode 'could', !!python/unicode 'would']
+      move: 3.1c
+      sentence_no: 3
+      tense: SP
+    paragraph_no: 4
+  - content:
+    - clauses: 6
+      content: 'However, if there is indeed a UPS, then it changes the lens through
+        which we view the design and evaluation of scheduling algorithms: e.g., rather
+        than asking whether a new scheduling algorithm meets a performance objective,
+        we should ask whether it is easier/cheaper to implement/configure than the
+        UPS (which could also meet that performance objective).'
+      length: 55
+      modal_count: 2
+      modals: [!!python/unicode 'could', !!python/unicode 'should']
+      move: 3.1c
+      sentence_no: 1
+      tense: SP
+    - clauses: 2
+      content: Taken to the extreme, one might even argue that the existence of a
+        (practical) UPS greatly diminishes the need for programmable scheduling hardware.
+      length: 23
+      modal_count: 1
+      modals: [!!python/unicode 'might']
+      move: 3.1c
+      sentence_no: 2
+      tense: SP
+    - clauses: 3
+      content: Thus, while the rest of the paper occasionally descends into scheduling
+        minutiae, the question we are asking has important practical (and intriguing
+        theoretical) implications.
+      length: 24
+      modal_count: 0
+      modals: []
+      move: '3.5'
+      sentence_no: 3
+      tense: SP
+    paragraph_no: 5
+  - content:
+    - clauses: 1
+      content: "This paper starts from the theoretical perspective, defining a formal\
+        \ model of packet scheduling and our notion of replayability in \xA72."
+      length: 21
+      modal_count: 0
+      modals: []
+      move: '3.2'
+      sentence_no: 1
+      tense: SP
+    - clauses: 3
+      content: We first prove that there is no UPS, but then show that Least Slack
+        Time First (LSTF) [28] comes as close as any scheduling algorithm to achieving
+        universality.
+      length: 27
+      modal_count: 0
+      modals: []
+      move: '3.2'
+      sentence_no: 2
+      tense: SP
+    - clauses: 2
+      content: We also demonstrate empirically (via simulation) that LSTF can closely
+        approximate the schedules of many scheduling algorithms.
+      length: 17
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: '3.2'
+      sentence_no: 3
+      tense: SP
+    - clauses: 2
+      content: Thus, while not a perfect UPS in terms of replayability, LSTF comes
+        very close to functioning as one.
+      length: 18
+      modal_count: 0
+      modals: []
+      move: '3.4'
+      sentence_no: 4
+      tense: SP
+    paragraph_no: 6
+  - content:
+    - clauses: 2
+      content: "We then take a more practical perspective in \xA73, showing (via simulation)\
+        \ that LSTF is comparable to the state of the art in achieving various objectives\
+        \ relevant to an application\u2019s performance."
+      length: 31
+      modal_count: 0
+      modals: []
+      move: '3.2'
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: "We investigate in detail LSTF\u2019s ability to minimize average flowcompletion\
+        \ times, minimize tail latencies, and achieve per-flow fairness."
+      length: 18
+      modal_count: 0
+      modals: []
+      move: '3.2'
+      sentence_no: 2
+      tense: SP
+    - clauses: 3
+      content: We also consider how LSTF can be used in multitenant situations to
+        achieve multiple objectives simultaneously, while highlighting some of its
+        key limitations.
+      length: 23
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: '3.2'
+      sentence_no: 3
+      tense: SP
+    paragraph_no: 7
+  - content:
+    - clauses: 2
+      content: "In \xA74, we look at how network feedback for active queue management\
+        \ (AQM) can be incorporated using LSTF."
+      length: 18
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: '3.7'
+      sentence_no: 1
+      tense: SP
+    - clauses: 3
+      content: Rather than augmenting the basic LSTF logic (which is restricted to
+        packet scheduling) with a queue management algorithm, we show that LSTF can,
+        instead, be used to implementAQMat the edge of the network.
+      length: 33
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: '3.7'
+      sentence_no: 2
+      tense: SP
+    - clauses: 2
+      content: This novel approach toAQMis a contribution in itself, as it allows
+        the algorithm to be upgraded without changing internal routers.
+      length: 20
+      modal_count: 0
+      modals: []
+      move: '3.7'
+      sentence_no: 3
+      tense: SP
+    paragraph_no: 8
+  - content:
+    - clauses: 1
+      content: "We then discuss the feasibility of implementing LSTF (\xA75) and provide\
+        \ an overviewof relatedwork (\xA76) before concluding with a discussion of\
+        \ open questions in \xA77."
+      length: 25
+      modal_count: 0
+      modals: []
+      move: '3.7'
+      sentence_no: 1
+      tense: SP
+    paragraph_no: 9
+meta:
+  author: ['Mittal, Radhika', 'Agarwal, Rachit', 'Ratnasamy, Sylvia', 'Shenker, Scott']
+  booktitle: 13th USENIX Symposium on Networked Systems Design and Implementation
+    (NSDI 16)
+  editor: ['Argyraki, Katerina J', 'Isaacs, Rebecca']
+  isbn: 978-1-931971-29-4
+  pages: 501-521
+  publisher: USENIX Association
+  title: Universal Packet Scheduling
+  url: https://www.usenix.org/conference/nsdi16/technical-sessions/presentation/mittal
+  year: 2016

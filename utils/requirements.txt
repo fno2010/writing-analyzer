@@ -2,3 +2,4 @@ pyquery
 bibtexparser
 selenium
 nltk
+pyyaml

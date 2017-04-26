@@ -1,0 +1,282 @@
+body:
+  introduction:
+  - content:
+    - clauses: 2
+      content: Virtualization has changed the way we do computing over the past 15
+        years; for instance, many datacenters are entirely virtualized to provide
+        quick provisioning, spillover to the cloud, and improved availability during
+        periods of disaster recovery.
+      length: 36
+      modal_count: 0
+      modals: []
+      move: 1.2b
+      sentence_no: 1
+      tense: SP
+    - clauses: 2
+      content: While virtualization is still to reach all types of workloads, the
+        number of virtual machines has already exceeded the number of servers and
+        further virtualization shows no signs of stopping [1].
+      length: 30
+      modal_count: 0
+      modals: []
+      move: 1.2b
+      sentence_no: 2
+      tense: SP
+    paragraph_no: 1
+  - content:
+    - clauses: 1
+      content: The rise of server virtualization has brought with it a fundamental
+        shift in datacenter networking.
+      length: 15
+      modal_count: 0
+      modals: []
+      move: '1.3'
+      sentence_no: 1
+      tense: SP
+    - clauses: 2
+      content: A new network access layer has emerged in which most network ports
+        are virtual, not physical [5] -- and therefore, the first hop switch for workloads
+        increasingly often resides within the hypervisor.
+      length: 30
+      modal_count: 0
+      modals: []
+      move: '1.3'
+      sentence_no: 2
+      tense: SP
+    - clauses: 1
+      content: "In the early days, these hypervisor \u201CvSwitches\u201D were primarily\
+        \ concerned with providing basic network connectivity."
+      length: 15
+      modal_count: 0
+      modals: []
+      move: '1.3'
+      sentence_no: 3
+      tense: SP
+    - clauses: 1
+      content: In effect, they simply mimicked their ToR cousins by extending physical
+        L2 networks to resident virtual machines.
+      length: 17
+      modal_count: 0
+      modals: []
+      move: 2.1a
+      sentence_no: 4
+      tense: SP
+    - clauses: 1
+      content: 'As virtualized workloads proliferated, limits of this approach became
+        evident: reconfiguring and preparing a physical network for new workloads
+        slows their provisioning, and coupling workloads with physical L2 segments
+        severely limits their mobility and scalability to that of the underlying network.'
+      length: 41
+      modal_count: 0
+      modals: []
+      move: 2.1a
+      sentence_no: 5
+      tense: SP
+    paragraph_no: 2
+  - content:
+    - clauses: 1
+      content: These pressures resulted in the emergence of network virtualization
+        [19].
+      length: 9
+      modal_count: 0
+      modals: []
+      move: 2.1a
+      sentence_no: 1
+      tense: SD
+    - clauses: 1
+      content: In network virtualization, virtual switches become the primary provider
+        of network services for VMs, leaving physical datacenter networks with transportation
+        of IP tunneled packets between hypervisors.
+      length: 26
+      modal_count: 0
+      modals: []
+      move: 2.1c
+      sentence_no: 2
+      tense: SP
+    - clauses: 1
+      content: This approach allows the virtual networks to be decoupled from their
+        underlying physical networks, and by leveraging the flexibility of general
+        purpose processors, virtual switches can provide VMs, their tenants, and administrators
+        with logical network abstractions, services and tools identical to dedicated
+        physical networks.
+      length: 44
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: 2.1c
+      sentence_no: 3
+      tense: SP
+    paragraph_no: 3
+  - content:
+    - clauses: 1
+      content: Network virtualization demands a capable virtual switch -- forwarding
+        functionality must be wired on a per virtual port basis to match logical network
+        abstractions configured by administrators.
+      length: 26
+      modal_count: 1
+      modals: [!!python/unicode 'must']
+      move: 2.1a
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: Implementation of these abstractions, across hypervisors, also greatly
+        benefits from fine-grained centralized coordination.
+      length: 13
+      modal_count: 0
+      modals: []
+      move: 2.1e
+      sentence_no: 2
+      tense: SP
+    - clauses: 2
+      content: This approach starkly contrasts with early virtual switches for which
+        a static, mostly hard-coded forwarding pipelines had been completely sufficient
+        to provide virtual machines with L2 connectivity to physical networks.
+      length: 30
+      modal_count: 0
+      modals: []
+      move: 2.1e
+      sentence_no: 3
+      tense: SP
+    paragraph_no: 4
+  - content:
+    - clauses: 3
+      content: 'It was this context: the increasing complexity of virtual networking,
+        emergence of network virtualization, and limitations of existing virtual switches,
+        that allowed Open vSwitch to quickly gain popularity.'
+      length: 28
+      modal_count: 0
+      modals: []
+      move: '3.5'
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: Today, on Linux, its original platform, Open vSwitch works with most
+        hypervisors and container systems, including Xen, KVM, and Docker.
+      length: 20
+      modal_count: 0
+      modals: []
+      move: '3.5'
+      sentence_no: 2
+      tense: SP
+    - clauses: 1
+      content: "Open vSwitch also works \u201Cout of the box\u201D on the FreeBSD\
+        \ and NetBSD operating systems and ports to the VMware ESXi and Microsoft\
+        \ Hyper-V hypervisors are underway."
+      length: 27
+      modal_count: 0
+      modals: []
+      move: '3.5'
+      sentence_no: 3
+      tense: SP
+    paragraph_no: 5
+  - content:
+    - clauses: 1
+      content: In this paper, we describe the design and implementation of Open vSwitch
+        [26, 29].
+      length: 12
+      modal_count: 0
+      modals: []
+      move: 3.1b
+      sentence_no: 1
+      tense: SP
+    - clauses: 2
+      content: The key elements of its design, revolve around the performance required
+        by the production environments in which Open vSwitch is commonly deployed,
+        and the programmability demanded by network virtualization.
+      length: 29
+      modal_count: 0
+      modals: []
+      move: '3.2'
+      sentence_no: 2
+      tense: SP
+    - clauses: 3
+      content: Unlike traditional network appliances, whether software or hardware,
+        which achieve high performance through specialization, Open vSwitch, by contrast,
+        is designed for flexibility and general-purpose usage.
+      length: 25
+      modal_count: 0
+      modals: []
+      move: '3.2'
+      sentence_no: 3
+      tense: SP
+    - clauses: 1
+      content: It must achieve high performance without the luxury of specialization,
+        adapting to differences in platforms supported, all while sharing resources
+        with the hypervisor and its workloads.
+      length: 26
+      modal_count: 1
+      modals: [!!python/unicode 'must']
+      move: '3.2'
+      sentence_no: 4
+      tense: SP
+    - clauses: 2
+      content: Therefore, this paper foremost concerns this tension -- how Open vSwitch
+        obtains high performance without sacrificing generality.
+      length: 16
+      modal_count: 0
+      modals: []
+      move: 3.1a
+      sentence_no: 5
+      tense: SP
+    paragraph_no: 6
+  - content:
+    - clauses: 2
+      content: The remainder of the paper is organized as follows.
+      length: 9
+      modal_count: 0
+      modals: []
+      move: '3.7'
+      sentence_no: 1
+      tense: SP
+    - clauses: 2
+      content: Section 2 provides further background about virtualized environments
+        while Section 3 describes the basic design of Open vSwitch.
+      length: 18
+      modal_count: 0
+      modals: []
+      move: '3.7'
+      sentence_no: 2
+      tense: SP
+    - clauses: 5
+      content: Afterward, Sections 4, 5, and 6 describe how the Open vSwitch design
+        optimizes for the require- ments of virtualized environments through flow
+        caching, how caching has wide-reaching implications for the en- tire design,
+        including its packet classifier, and how Open vSwitch manages its flowcaches.
+      length: 44
+      modal_count: 0
+      modals: []
+      move: '3.7'
+      sentence_no: 3
+      tense: SP
+    - clauses: 1
+      content: Section 7 then evaluates the performance of Open vSwitch through classification
+        and caching micro-benchmarks but also provides a view of Open vSwitch performance
+        in a multi-tenant datacen- ter.
+      length: 28
+      modal_count: 0
+      modals: []
+      move: '3.7'
+      sentence_no: 4
+      tense: SP
+    - clauses: 1
+      content: Before concluding, we discuss ongoing, future and related work in Section
+        8.
+      length: 12
+      modal_count: 0
+      modals: []
+      move: '3.7'
+      sentence_no: 5
+      tense: SP
+    paragraph_no: 7
+meta:
+  author: ['Pfaff, Ben', 'Pettit, Justin', 'Koponen, Teemu', 'Jackson, Ethan J', 'Zhou,
+      Andy', 'Rajahalme, Jarno', 'Gross, Jesse', 'Wang, Alex', 'Stringer, Joe', 'Shelar,
+      Pravin', 'Amidon, Keith', "Casado, Mart\xEDn"]
+  bibsource: dblp computer science bibliography, http://dblp.org
+  biburl: http://dblp.uni-trier.de/rec/bib/conf/nsdi/PfaffPKJZRGWSSA15
+  booktitle: 12th USENIX Symposium on Networked Systems Design and Implementation,
+    NSDI 15, Oakland, CA, USA, May 4-6, 2015
+  pages: 117-130
+  publisher: USENIX Association
+  title: The Design and Implementation of Open vSwitch
+  url: https://www.usenix.org/conference/nsdi15/technical-sessions/presentation/pfaff
+  year: 2015

@@ -1,0 +1,110 @@
+meta:
+  author:
+    - João Martins
+    - Mohamed Ahmed
+    - Costin Raiciu
+    - Vladimir Andrei Olteanu
+    - Michio Honda
+    - Roberto Bifulco
+    - Felipe Huici
+  editor: 
+    - Ratul Mahajan
+    - Ion Stoica
+  title: ClickOS and the Art of Network Function Virtualization
+  booktitle: Proceedings of the 11th USENIX Symposium on Networked Systems Design and Implementation, NSDI 2014, Seattle, WA, USA, April 2-4, 2014
+  pages: 459-473
+  publisher: USENIX Association
+  year: 2014
+  url: https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/martins
+  biburl: http://dblp.uni-trier.de/rec/bib/conf/nsdi/MartinsAROHBH14
+  bibsource: dblp computer science bibliography, http://dblp.org
+body:
+  introduction:
+    - paragraph_no: 1
+      content:
+        - sentence_no: 1
+          content: The presence of hardware-based network appliances (also known as middleboxes) has exploded, to the point where they are now an intrinsic and fundamental part of today’s operational networks.
+          move: !!str 1.2b
+        - sentence_no: 2
+          content: They are essential to network operators, supporting a diverse set of functions ranging from security (firewalls, IDSes, traffic scrubbers), traffic shaping (rate limiters, load balancers), dealing with address space exhaustion (NATs) or improving performance (traffic accelerators, caches, proxies), to name a few.
+          move: !!str 1.2b
+        - sentence_no: 3
+          content: "Middleboxes are ubiquitous: a third of access networks show symptoms of stateful middlebox processing [12] and in enterprise networks there are as many middleboxes deployed as routers and switches [37]."
+          move: !!str 1.2b
+    - paragraph_no: 2
+      content:
+        - sentence_no: 1
+          content: "Despite their usefulness, recent reports and operator feedback reveal that such proprietary middleboxes come with a number of significant drawbacks [9]: middleboxes are expensive to buy and manage [37], and introducing new features means having to deploy new hardware at the next purchase cycle, a process which on average takes four years."
+          move: !!str 2.1a
+        - sentence_no: 2
+          content: Hardware middleboxes cannot easily be scaled up and down with shifting demand, and so must provisioned to cope with peak demand, which is wasteful.
+          move: !!str 2.1a
+        - sentence_no: 3
+          content: Finally, a considerable level of investment is needed to develop new hardware-based devices, which leaves potential small players out of the market and so raises innovation barriers.
+          move: !!str 2.1a
+    - paragraph_no: 3
+      content:
+        - sentence_no: 1
+          content: To address these issues, Network Function Virtualization (NFV) has been recently proposed to shift middlebox processing from hardware appliances to software running on inexpensive, commodity hardware (e.g., x86 servers with 10Gb NICs).
+          move: !!str 2.1c
+        - sentence_no: 2
+          content: "NFV has already gained a considerable momentum: seven of the world’s leading telecoms network operators, along with 52 other operators, IT and equipment vendors and technology providers, have initiated a new standards group for the virtualization of network functions [8]."
+          move: !!str 2.1c
+    - paragraph_no: 4
+      content:
+        - sentence_no: 1
+          content: "NFV platforms must support multi-tenancy, since they are intended to concurrently run software belonging to the operator and (potentially untrusted) third parties: colocated middleboxes should be isolated not only from a security but also a performance point of view [10]."
+          move: !!str 2.1a
+        - sentence_no: 2
+          content: Further, as middleboxes implement a large range of functionality, platforms should accommodate a wide range of OSes, APIs and software packages.
+          move: !!str 2.1a
+    - paragraph_no: 5
+      content:
+        - sentence_no: 1
+          content: Is it possible to build a software-based virtualized middlebox platform that fits these requirements?
+          move: !!str 2.1d
+        - sentence_no: 2
+          content: Hypervisor-based technologies such as Xen or KVM are well established candidates and offer security and performance isolation out-of-the-box.
+          move: !!str 2.1c
+        - sentence_no: 3
+          content: However, they only support small numbers of tenants and their networking performance is unsatisfactory.
+          move: !!str 2.1a
+        - sentence_no: 4
+          content: "At a high-level, the reason for the poor performance is simple: neither the hypervisors (Xen or KVM), nor the guest OSes (e.g., Linux) have been optimized for middlebox processing."
+          move: !!str 2.1a
+    - paragraph_no: 5
+      content:
+        - sentence_no: 1
+          content: In this paper we present the design, implementation and evaluation of ClickOS, a Xen-based software platform optimized for middlebox processing.
+          move: !!str 3.1b
+        - sentence_no: 2
+          content: To achieve high performance, ClickOS implements an extensive overhaul of Xen’s I/O subsystem, including changes to the back-end switch, virtual net devices and back and front-end drivers.
+          move: !!str 3.2
+        - sentence_no: 3
+          content: "These changes enable ClickOS to significantly speed up networking in middleboxes running in Linux virtual machines: for simple packet generation, Linux throughput increases from 6.46 Gb/s to 9.68 Gb/s for 1500B packets and from 0.42 Gb/s to 5.73 Gb/s for minimum-sized packets."
+          move: !!str 3.4
+    - paragraph_no: 6
+      content:
+        - sentence_no: 1
+          content: A key observation is that developing middleboxes as applications running over Linux (and other commodity OSes) is a complex task and uses few of the OS services beyond network connectivity.
+          move: !!str 3.5
+        - sentence_no: 2
+          content: To allow ease of development, a much better choice is to use specialized frameworks to program middleboxes.
+          move: !!str 3.5
+        - sentence_no: 3
+          content: Click [17] is a stand-out example as it allows users to build complex middlebox processing configurations by using simple, well known processing elements.
+          move: !!str 3.5
+        - sentence_no: 4
+          content: Click is great for middlebox processing, but it currently needs Linux to function and so it inherits the overheads of commodity OSes.
+          move: !!str 3.5
+    - paragraph_no: 7
+      content:
+        - sentence_no: 1
+          content: To support fast, easily programmable middleboxes, ClickOS implements a minimalistic guest virtual machine that is optimized from the ground up to run Click processing at rates of millions of packets per second.
+          move: !!str 3.5
+        - sentence_no: 2
+          content: ClickOS images are small (5MB), making it possible to run a large number of them (up to 400 in our tests).
+          move: !!str 3.5
+        - sentence_no: 3
+          content: ClickOS virtual machines can boot and instantiate middlebox processing in under 30 milliseconds, and can saturate a 10Gb/s link for almost all packets sizes while concurrently running as many as 100 ClickOS virtual machines on a single CPU core.
+          move: !!str 3.5

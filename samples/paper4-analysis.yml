@@ -1,0 +1,111 @@
+meta:
+  author:
+    - Mittal, Radhika
+    - Agarwal, Rachit
+    - Ratnasamy, Sylvia
+    - Shenker, Scott
+  booktitle: 13th USENIX Symposium on Networked Systems Design and Implementation (NSDI 16)
+  editor:
+    - Argyraki, Katerina J
+    - Isaacs, Rebecca
+  isbn: 978-1-931971-29-4
+  pages: 501-521
+  publisher: USENIX Association
+  title: Universal Packet Scheduling
+  url: https://www.usenix.org/conference/nsdi16/technical-sessions/presentation/mittal
+  year: 2016
+body:
+  introduction:
+    - paragraph_no: 1
+      content:
+        - sentence_no: 1
+          content: There is a large and active research literature on novel packet scheduling algorithms, from simple schemes such as priority scheduling [38], to more complicated mechanisms for achieving fairness [20,34,39], to schemes that help reduce tail latency [19] or flow completion time [10], and this short list barely scratches the surface of past and current work.
+          move: !!str 1.1b
+        - sentence_no: 2
+          content: In this paper we do not add to this impressive collection of algorithms, but instead ask if there is a single universal packet scheduling algorithm that could obviate the need for new ones.
+          move: !!str 3.1a
+        - sentence_no: 3
+          content: In this context, we consider a packet scheduling algorithm to be both howpackets are served inside the network (based on their arrival times and their packet headers) and how packet header fields are initialized and updated; this definition includes all the classical scheduling algorithms (FIFO, LIFO, priority, round-robin) as well as algorithms that incorporate dynamic packet state [19, 44, 45].
+          move: !!str 3.1b
+    - paragraph_no: 2
+      content:
+        - sentence_no: 1
+          content: We can define a universal packet scheduling algorithm (hereafter UPS) in twoways, depending on our viewpoint on the problem.
+          move: !!str 1.1a
+        - sentence_no: 2
+          content: From a theoretical perspective, we call a packet scheduling algorithm universal if it can replay any schedule (the set of times at which packets arrive to and exit from the network) produced by any other scheduling algorithm.
+          move: !!str 1.1a
+        - sentence_no: 3
+          content: This is not of practical interest, since such schedules are not typically known in advance, but it offers a theoretically rigorous definition of universality that (as we shall see) helps illuminate its fundamental limits (i.e., which scheduling algorithms have the flexibility to serve as a UPS, and why).
+          move: !!str 1.1a
+    - paragraph_no: 3
+      content:
+        - sentence_no: 1
+          content: From a more practical perspective, we say a packet scheduling algorithm is universal if it can achieve different desired performance objectives (such as fairness, reducing tail latencies and minimizing flow completion times).
+          move: !!str 1.1a
+        - sentence_no: 2
+          content: In particular, we require that the UPS should match the performance of the best known scheduling algorithm for a given performance objective.
+          move: !!str 1.1a
+    - paragraph_no: 4
+      content:
+        - sentence_no: 1
+          content: The notion of universality for packet scheduling might seem esoteric, but we think it helps clarify some basic questions.
+          move: !!str 3.1c
+        - sentence_no: 2
+          content: If there exists no UPS then we should expect to design new scheduling algorithms as performance objectives evolve.
+          move: !!str 3.1c
+        - sentence_no: 3
+          content: Moreover, this would make a strong argument for switches being equipped with programmable packet schedulers so that such algorithms could be more easily deployed (as argued in [42]; in fact, it was the eloquent argument in this paper that caused us to initially ask the question about universality).
+          move: !!str 3.1c
+    - paragraph_no: 5
+      content:
+        - sentence_no: 1
+          content: "However, if there is indeed a UPS, then it changes the lens through which we view the design and evaluation of scheduling algorithms: e.g., rather than asking whether a new scheduling algorithm meets a performance objective, we should ask whether it is easier/cheaper to implement/configure than the UPS (which could also meet that performance objective)."
+          move: !!str 3.1c
+        - sentence_no: 2
+          content: Taken to the extreme, one might even argue that the existence of a (practical) UPS greatly diminishes the need for programmable scheduling hardware.
+          move: !!str 3.1c
+        - sentence_no: 3
+          content: Thus, while the rest of the paper occasionally descends into scheduling minutiae, the question we are asking has important practical (and intriguing theoretical) implications.
+          move: !!str 3.5
+    - paragraph_no: 6
+      content:
+        - sentence_no: 1
+          content: This paper starts from the theoretical perspective, defining a formal model of packet scheduling and our notion of replayability in §2.
+          move: !!str 3.2
+        - sentence_no: 2
+          content: We first prove that there is no UPS, but then show that Least Slack Time First (LSTF) [28] comes as close as any scheduling algorithm to achieving universality.
+          move: !!str 3.2
+        - sentence_no: 3
+          content: We also demonstrate empirically (via simulation) that LSTF can closely approximate the schedules of many scheduling algorithms.
+          move: !!str 3.2
+        - sentence_no: 4
+          content: Thus, while not a perfect UPS in terms of replayability, LSTF comes very close to functioning as one.
+          move: !!str 3.4
+    - paragraph_no: 7
+      content:
+        - sentence_no: 1
+          content: We then take a more practical perspective in §3, showing (via simulation) that LSTF is comparable to the state of the art in achieving various objectives relevant to an application’s performance.
+          move: !!str 3.2
+        - sentence_no: 2
+          content: We investigate in detail LSTF’s ability to minimize average flowcompletion times, minimize tail latencies, and achieve per-flow fairness.
+          move: !!str 3.2
+        - sentence_no: 3
+          content: We also consider how LSTF can be used in multitenant situations to achieve multiple objectives simultaneously, while highlighting some of its key limitations.
+          move: !!str 3.2
+    - paragraph_no: 8
+      content:
+        - sentence_no: 1
+          content: In §4, we look at how network feedback for active queue management (AQM) can be incorporated using LSTF.
+          move: !!str 3.7
+        - sentence_no: 2
+          content: Rather than augmenting the basic LSTF logic (which is restricted to packet scheduling) with a queue management algorithm, we show that LSTF can, instead, be used to implementAQMat the edge of the network.
+          move: !!str 3.7
+        - sentence_no: 3
+          content: This novel approach toAQMis a contribution in itself, as it allows the algorithm to be upgraded without changing internal routers.
+          move: !!str 3.7
+    - paragraph_no: 9
+      content:
+        - sentence_no: 1
+          content: We then discuss the feasibility of implementing LSTF (§5) and provide an overviewof relatedwork (§6) before concluding with a discussion of open questions in §7.
+          move: !!str 3.7
