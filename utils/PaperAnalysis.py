@@ -196,3 +196,16 @@ def clause_satistics(papers):
 
 def display_content(paper, section):
     print '\n'.join([' '.join([s['content']+' ('+s['move']+')' for s in p]) for p in paper['body'][section]])
+
+def export_markdown(paper):
+    title = paper['meta']['title']
+    authors = paper['meta']['author']
+    authors_str = ', '.join(authors[:-1]) + ' and ' + authors[-1] if len(authors) > 1 else authors[-1]
+    body = ''
+    for sec in paper['body'].keys():
+        body += sec.upper() + '\n\n'
+        for para in paper['body'][sec]:
+            body += '\\'
+            body += ' '.join(['(%d) %s' % (s['sentence_no'], s['content']) for s in para['content']])
+            body += '\n\n'
+    return '%%%s\n%%%s\n\n%s' % (title, authors_str, body)

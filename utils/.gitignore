@@ -98,3 +98,6 @@ ENV/
 
 # Cache
 bib
+output
+*.yml
+*.docx
