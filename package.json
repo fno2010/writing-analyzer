@@ -1,0 +1,35 @@
+{
+  "name": "writing-analyzer",
+  "version": "0.1.0",
+  "description": "A components based analyzer for English research writing",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fno2010/writing-analyzer.git"
+  },
+  "keywords": [
+    "research",
+    "writing",
+    "analyzer"
+  ],
+  "author": "Jensen Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fno2010/writing-analyzer/issues"
+  },
+  "homepage": "https://github.com/fno2010/writing-analyzer#readme",
+  "devDependencies": {
+    "electron": "^1.4.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "firebase": "^3.6.2",
+    "pdf-extract": "^1.0.9",
+    "pdf-text-extract": "^1.4.1",
+    "vue": "^2.1.3"
+  }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="analyzer">
+  <head>
+    <!-- <base href="/"> -->
+    <title>Writing Analyzer</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/photon.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/docs.min.css">
+    <link rel="stylesheet" href="css/widget.css">
+
+    <!-- Javascript -->
+    <script src="js/menu.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="window">
+
+      <!-- Your app's content goes inside .window-content -->
+      <div class="window-content">
+        <div class="pane-group">
+          <div class="pane pane-sm sidebar" ng-controller="navbar">
+            <ul class="list-group">
+              <li class="list-group-header sidebar-brand">
+                <h3 class="media-object pull-left"><span class="icon icon-book-open"></span> Writing Analyzer</h3>
+              </li>
+              <li class="list-group-item" ng-class="{active: isActive('/components-definition')}">
+                <a href="#/components-definition">
+                  <h4>Components Definition</h4>
+                  <p>Customize components for different section types.</p>
+                </a>
+              </li>
+              <li class="list-group-item" ng-class="{active: isActive('/documents-processing')}">
+                <a href="#/documents-processing">
+                  <h4>Documents Processing</h4>
+                  <p>Mark component labels for each sentence of the document.</p>
+                </a>
+              </li>
+              <li class="list-group-item" ng-class="{active: isActive('/basic-analysis')}">
+                <a href="#/basic-analysis">
+                  <h4>Basic Analysis</h4>
+                  <p>Proceed words statistics based analysis and generate the basic report.</p>
+                </a>
+              </li>
+              <li class="list-group-item" ng-class="{active: isActive('/advanced-analysis')}">
+                <a href="#/advanced-analysis">
+                  <h4>Advanced Analysis</h4>
+                  <p>Use natural language processing to generate more detailed analysis report.</p>
+                </a>
+              </li>
+              <li class="list-group-item" ng-class="{active: isActive('/user-guide')}">
+                <a href="#/user-guide">
+                  <h4>User Guide</h4>
+                  <p>Read documentation and the fundemental theory of this analyzer.</p>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <!-- Padding -->
+              </li>
+            </ul>
+          </div>
+
+          <!-- Controller information panel -->
+          <div class="pane" ng-view>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+         ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script>if (typeof module === 'object') {tempModule = module; window.module = module; module = undefined;}</script>
+    <script>if (require) {Require = require;}</script>
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
+    <!-- <script>window.$ = window.jQuery = require('./js/jquery.min.js');</script> -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/ace/ace.js"></script>
+
+    <!-- Data render -->
+    <script src="js/app.js"></script>
+    <!-- <script> -->
+    <!-- var editor = ace.edit("document-view"); -->
+    <!-- </script> -->
+    <!-- <script>if (window.module) module = window.module;</script> -->
+    <script>if (tempModule) module = tempModule;</script>
+  </body>
+</html>
