@@ -1,0 +1,12 @@
+sudo: false
+language: r
+addons:
+  apt:
+    packages:
+      - texlive-xetex
+      - texlive-fonts-recommended
+      - texlive-pictures
+before_install:
+  - tlmgr install elsarticle xargs todonotes
+script:
+  - make -j2
