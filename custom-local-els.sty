@@ -1,0 +1,27 @@
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xargs} % use more than one optional parameters in a new command
+\usepackage[colorinlistoftodos,prependcaption]{todonotes}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{Improvement: #2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{Info: #2}}
+\newcommandx{\hide}[2][1=]{\todo[linecolor=yellow,backgroundcolor=yellow!25,bordercolor=yellow,inline,#1]{Hide: #2}}
+\usepackage{hyperref}
+\usepackage[open,openlevel=1]{bookmark}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes, arrows, snakes}
+
+\tikzstyle{condition} = [diamond, draw, text width=8em, text badly centered, aspect=2, node distance=2.5cm, inner sep=0pt]
+\tikzstyle{process} = [rectangle, draw, text width=10em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{line} = [draw, very thick, color=black!50, -latex']
+
+\newcommand{\jensen}[1]{\textcolor{red}{[TODO: #1]}}
+
+\hypersetup{breaklinks=true,
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
