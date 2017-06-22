@@ -1,6 +1,6 @@
 # Publication
 
-[![Travis](https://img.shields.io/travis/fno2010/writing-analysis.svg)](https://travis-ci.org/fno2010/writing-analysis)
+[![Travis](https://img.shields.io/travis/fno2010/writing-analyzer/publication.svg)](https://travis-ci.org/fno2010/writing-analyzer)
 
 ## Meta Information
 
