@@ -6,7 +6,7 @@ addons:
       - texlive-xetex
       - texlive-fonts-recommended
       - texlive-pictures
-before_install:
+install:
   - tlmgr install elsarticle xargs todonotes
 script:
   - make -j2
