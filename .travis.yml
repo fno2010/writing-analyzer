@@ -7,6 +7,6 @@ addons:
       - texlive-fonts-recommended
       - texlive-pictures
 install:
-  - tlmgr install elsarticle xargs todonotes
+  - tlmgr install elsarticle xargs todonotes texcount
 script:
   - make -j2
