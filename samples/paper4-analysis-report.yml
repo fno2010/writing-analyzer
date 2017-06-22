@@ -1,4 +1,156 @@
 body:
+  conclusion:
+  - content:
+    - clauses: 3
+      content: This paper started with a theoretical perspective by analyzing whether
+        there exists a single universal packet scheduling algorithm that can perfectly
+        replay all viable schedules.
+      length: 25
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: '1.1'
+      sentence_no: 1
+      tense: SP
+    - clauses: 4
+      content: We proved that while such an algorithm cannot exist, LSTF comes closest
+        to being one (in terms of the number of congestion points it can handle).
+      length: 27
+      modal_count: 2
+      modals: [!!python/unicode 'can']
+      move: '1.3'
+      sentence_no: 2
+      tense: SP
+    - clauses: 1
+      content: We then empirically demonstrated the ability of LSTF to approximately
+        replay a wide range of scheduling algorithms under varying network settings.
+      length: 21
+      modal_count: 0
+      modals: []
+      move: '1.3'
+      sentence_no: 3
+      tense: SD
+    - clauses: 2
+      content: Replaying a given schedule, while of theoretical interest, requires
+        the knowledge of viable output times, which is not available in practice.
+      length: 21
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 4
+      tense: SP
+    paragraph_no: 1
+  - content:
+    - clauses: 2
+      content: Hence, we next considered if LSTF can be used in practice to achieve
+        various performance objectives.
+      length: 16
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: '1.3'
+      sentence_no: 1
+      tense: SP
+    - clauses: 2
+      content: We showed via simulation how LSTF, combined with heuristics to set
+        the slack values at the ingress, can do a reasonable job of minimizing average
+        flow completion time, minimizing tail latencies, and achieving per-flow fairness.
+      length: 35
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: '1.3'
+      sentence_no: 2
+      tense: SP
+    - clauses: 1
+      content: We also discussed some limitations of LSTF (with respect to achieving
+        class-based fairness and traffic shaping).
+      length: 16
+      modal_count: 0
+      modals: []
+      move: '1.3'
+      sentence_no: 3
+      tense: SP
+    paragraph_no: 2
+  - content:
+    - clauses: 3
+      content: Noting that scheduling is often used along with AQM to prevent queue
+        build up, we then showed how LSTF can be used to implement versions of AQM
+        from the network edge, with performance comparable to FQ-CoDel and to DCTCP
+        with ECN (the state-of-the art AQM schemes for wide-area and datacenters respectively).
+      length: 51
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: '1.5'
+      sentence_no: 1
+      tense: SP
+    paragraph_no: 3
+  - content:
+    - clauses: 3
+      content: While an initial step towards understanding the notion of a Universal
+        Packet Scheduling algorithm, our work leaves several theoretical questions
+        unanswered, three of which we mention here.
+      length: 27
+      modal_count: 0
+      modals: []
+      move: '1.2'
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: First, we showed existence of a UPS with omniscient header initialization,
+        and nonexistence with limited-information initialization.
+      length: 16
+      modal_count: 0
+      modals: []
+      move: '1.3'
+      sentence_no: 2
+      tense: SP
+    - clauses: 5
+      content: What is the least information we can use for header initialization
+        in order to achieve universality? Second, we showed that, in practice, the
+        fraction of overdue packets is small, and most are only overdue by a small
+        amount.
+      length: 39
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: '1.5'
+      sentence_no: 3
+      tense: SP
+    - clauses: 1
+      content: Are there tractable bounds on both the number of overdue packets and/or
+        their degree of lateness?
+      length: 17
+      modal_count: 0
+      modals: []
+      move: '3.1'
+      sentence_no: 4
+      tense: SP
+    - clauses: 2
+      content: "Third, while we have a formal characterization for the scope of LSTF\
+        \ with respect to replaying a given schedule, and we have simulation evidence\
+        \ of LSTF\u2019s ability to meet several performance objectives, we do not\
+        \ yet have any formal model for the scope of LSTF in meeting these objectives."
+      length: 49
+      modal_count: 0
+      modals: []
+      move: '1.3'
+      sentence_no: 5
+      tense: SP
+    - clauses: 2
+      content: Can one describe the class of performance objectives that LSTF can
+        meet?
+      length: 13
+      modal_count: 2
+      modals: [!!python/unicode 'Can', !!python/unicode 'can']
+      move: '3.1'
+      sentence_no: 6
+      tense: SP
+    - clauses: 2
+      content: Also, are there any new objectives that LSTF allows us to achieve?
+      length: 13
+      modal_count: 0
+      modals: []
+      move: '3.1'
+      sentence_no: 7
+      tense: SP
+    paragraph_no: 4
   introduction:
   - content:
     - clauses: 2

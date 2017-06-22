@@ -146,3 +146,77 @@ body:
         - sentence_no: 6
           content: Some of these early ideas may not have directly influenced later ones, but we believe that the connections between the concepts that we outline are noteworthy, and that these projects of the past may yet offer new lessons for SDN in the future.
           move: !!str 3.5
+  conclusion:
+    - paragraph_no: 1
+      content:
+        - sentence_no: 1
+          content: This paper has offered an intellectual history of programmable networks.
+          move: !!str 1.2
+        - sentence_no: 2
+          content: The idea of a programmable network initially took shape as active networking, which espoused many of the same visions as SDN, but lacked both a clear use case and an incremental deployment path.
+          move: !!str 1.5
+        - sentence_no: 3
+          content: After the era of active networking research projects, the pendulum swung from vision to pragmatism, in the form of separating the data and control plane to make the network easier to manage.
+          move: !!str 1.5
+        - sentence_no: 4
+          content: This work focused primarily on better ways to route network traffic -- a much narrower vision than previous work on active networking.
+          move: !!str 1.1
+    - paragraph_no: 2
+      content:
+        - sentence_no: 1
+          content: Ultimately, the work on OpenFlow and network operating systems struck the right balance between vision and pragmatism.
+          move: !!str 1.5
+        - sentence_no: 2
+          content: This work advocated network-wide control for a wide range of applications, yet relied only on the existing capabili- ties of switch chipsets.
+          move: !!str 1.5
+        - sentence_no: 3
+          content: Backwards compatibility with existing switch hardware appealed to many equipment vendors clamoring to compete in the growing market in data-center networks.
+          move: !!str 1.5
+        - sentence_no: 4
+          content: The balance of a broad, clear vision with a pragmatic strategy for widespread adoption gained traction when SDN found a compelling use case in network virtualization.
+          move: !!str 1.5
+    - paragraph_no: 3
+      content:
+        - sentence_no: 1
+          content: As SDN continues to develop, we believe that history has important lessons to tell.
+          move: !!str 1.5
+        - sentence_no: 2
+          content: First, SDN technologies will live or die based on “use pulls”.
+          move: !!str 1.5
+        - sentence_no: 3
+          content: Although SDN is often heralded as the solution to all networking problems, it is worth remembering that SDN is just a tool for solving network-management problems more easily.
+          move: !!str 1.5
+        - sentence_no: 4
+          content: SDN merely places the power in our hands to develop new applications and solutions to longstanding problems.
+          move: !!str 1.5
+        - sentence_no: 5
+          content: In this respect, our work is just beginning.
+          move: !!str 1.5
+        - sentence_no: 6
+          content: If the past is any indication, the development of these new technologies will require innovation on multiple timescales, from long-term bold visions (such as active networking) to nearterm creative problem solving (such as the operationally focused work on separating the control and data planes).
+          move: !!str 1.5
+    - paragraph_no: 4
+      content:
+        - sentence_no: 1
+          content: Second, we caution that the balance between vision and pragmatism remains tenuous.
+          move: !!str 1.5
+        - sentence_no: 2
+          content: The bold vision of SDN advocates a wide variety of control applications; yet, OpenFlow’s control over the data plane is confined to primitive match-action operations on packet-header fields.
+          move: !!str 1.5
+        - sentence_no: 3
+          content: SDN merely places the power in our hands to develop new applications and solutions to longstanding problems.
+          move: !!str 1.5
+        - sentence_no: 4
+          content: Supporting a wide range of network services would require much more sophisticated ways to analyze and manipulate traffic (e.g., deep-packet inspection, and compression, encryption, and transcoding of packets), using commodity servers (e.g., x86 machines) or programmable hardware (e.g., FPGAs, network processors, and GPUs), or both.
+          move: !!str 1.5
+        - sentence_no: 5
+          content: Interestingly, the renewed interest in more sophisticated data-plane functionality, such as Network Functions Virtualization, harkens back to the earlier work on active networking, bringing our story full circle.
+          move: !!str 1.5
+    - paragraph_no: 5
+      content:
+        - sentence_no: 1
+          content: Maintaining SDN’s bold vision requires us to continue thinking “out of the box” about the best ways to program the network, without being constrained by the limitations of current technologies.
+          move: !!str 3.3
+        - sentence_no: 2
+          content: Rather than simply designing SDN applications with the current OpenFlow protocols in mind, we should think about what kind of control we want to have over the data plane, and balance that vision with a pragmatic strategy for deployment.
+          move: !!str 3.3

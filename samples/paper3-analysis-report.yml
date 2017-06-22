@@ -1,4 +1,217 @@
 body:
+  conclusion:
+  - content:
+    - clauses: 1
+      content: This paper has offered an intellectual history of programmable networks.
+      length: 10
+      modal_count: 0
+      modals: []
+      move: '1.2'
+      sentence_no: 1
+      tense: SP
+    - clauses: 2
+      content: The idea of a programmable network initially took shape as active networking,
+        which espoused many of the same visions as SDN, but lacked both a clear use
+        case and an incremental deployment path.
+      length: 33
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 2
+      tense: SP
+    - clauses: 1
+      content: After the era of active networking research projects, the pendulum
+        swung from vision to pragmatism, in the form of separating the data and control
+        plane to make the network easier to manage.
+      length: 32
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 3
+      tense: SP
+    - clauses: 1
+      content: This work focused primarily on better ways to route network traffic
+        -- a much narrower vision than previous work on active networking.
+      length: 21
+      modal_count: 0
+      modals: []
+      move: '1.1'
+      sentence_no: 4
+      tense: SD
+    paragraph_no: 1
+  - content:
+    - clauses: 1
+      content: Ultimately, the work on OpenFlow and network operating systems struck
+        the right balance between vision and pragmatism.
+      length: 17
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 1
+      tense: SD
+    - clauses: 1
+      content: This work advocated network-wide control for a wide range of applications,
+        yet relied only on the existing capabili- ties of switch chipsets.
+      length: 22
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 2
+      tense: SP
+    - clauses: 1
+      content: Backwards compatibility with existing switch hardware appealed to many
+        equipment vendors clamoring to compete in the growing market in data-center
+        networks.
+      length: 21
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 3
+      tense: SP
+    - clauses: 2
+      content: The balance of a broad, clear vision with a pragmatic strategy for
+        widespread adoption gained traction when SDN found a compelling use case in
+        network virtualization.
+      length: 26
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 4
+      tense: SP
+    paragraph_no: 2
+  - content:
+    - clauses: 3
+      content: As SDN continues to develop, we believe that history has important
+        lessons to tell.
+      length: 14
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: "First, SDN technologies will live or die based on \u201Cuse pulls\u201D\
+        ."
+      length: 11
+      modal_count: 1
+      modals: [!!python/unicode 'will']
+      move: '1.5'
+      sentence_no: 2
+      tense: SP
+    - clauses: 3
+      content: Although SDN is often heralded as the solution to all networking problems,
+        it is worth remembering that SDN is just a tool for solving network-management
+        problems more easily.
+      length: 28
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 3
+      tense: SP
+    - clauses: 1
+      content: SDN merely places the power in our hands to develop new applications
+        and solutions to longstanding problems.
+      length: 17
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 4
+      tense: SP
+    - clauses: 1
+      content: In this respect, our work is just beginning.
+      length: 8
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 5
+      tense: SP
+    - clauses: 2
+      content: If the past is any indication, the development of these new technologies
+        will require innovation on multiple timescales, from long-term bold visions
+        (such as active networking) to nearterm creative problem solving (such as
+        the operationally focused work on separating the control and data planes).
+      length: 44
+      modal_count: 1
+      modals: [!!python/unicode 'will']
+      move: '1.5'
+      sentence_no: 6
+      tense: SP
+    paragraph_no: 3
+  - content:
+    - clauses: 2
+      content: Second, we caution that the balance between vision and pragmatism remains
+        tenuous.
+      length: 12
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: "The bold vision of SDN advocates a wide variety of control applications;\
+        \ yet, OpenFlow\u2019s control over the data plane is confined to primitive\
+        \ match-action operations on packet-header fields."
+      length: 28
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 2
+      tense: SP
+    - clauses: 1
+      content: SDN merely places the power in our hands to develop new applications
+        and solutions to longstanding problems.
+      length: 17
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 3
+      tense: SP
+    - clauses: 1
+      content: Supporting a wide range of network services would require much more
+        sophisticated ways to analyze and manipulate traffic (e.g., deep-packet inspection,
+        and compression, encryption, and transcoding of packets), using commodity
+        servers (e.g., x86 machines) or programmable hardware (e.g., FPGAs, network
+        processors, and GPUs), or both.
+      length: 45
+      modal_count: 1
+      modals: [!!python/unicode 'would']
+      move: '1.5'
+      sentence_no: 4
+      tense: SP
+    - clauses: 1
+      content: Interestingly, the renewed interest in more sophisticated data-plane
+        functionality, such as Network Functions Virtualization, harkens back to the
+        earlier work on active networking, bringing our story full circle.
+      length: 28
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 5
+      tense: SP
+    paragraph_no: 4
+  - content:
+    - clauses: 1
+      content: "Maintaining SDN\u2019s bold vision requires us to continue thinking\
+        \ \u201Cout of the box\u201D about the best ways to program the network, without\
+        \ being constrained by the limitations of current technologies."
+      length: 30
+      modal_count: 0
+      modals: []
+      move: '3.3'
+      sentence_no: 1
+      tense: SP
+    - clauses: 2
+      content: Rather than simply designing SDN applications with the current OpenFlow
+        protocols in mind, we should think about what kind of control we want to have
+        over the data plane, and balance that vision with a pragmatic strategy for
+        deployment.
+      length: 39
+      modal_count: 1
+      modals: [!!python/unicode 'should']
+      move: '3.3'
+      sentence_no: 2
+      tense: SP
+    paragraph_no: 5
   introduction:
   - content:
     - clauses: 1

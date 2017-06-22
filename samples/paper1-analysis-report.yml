@@ -1,4 +1,132 @@
 body:
+  conclusion:
+  - content:
+    - clauses: 1
+      content: This paper has presented ClickOS, a Xen-based virtualized platform
+        optimized for middlebox processing.
+      length: 13
+      modal_count: 0
+      modals: []
+      move: '1.2'
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: 'ClickOS can turn Network Function Virtualization into reality: it
+        runs hundreds of middleboxes on commodity hardware, offers millions of packets
+        per second processing speeds and yields low packet delays.'
+      length: 29
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: '1.4'
+      sentence_no: 2
+      tense: SP
+    - clauses: 2
+      content: Our experiments have shown that a low-end server can forward packets
+        at around 30Gb/s.
+      length: 14
+      modal_count: 1
+      modals: [!!python/unicode 'can']
+      move: '1.4'
+      sentence_no: 3
+      tense: SP
+    paragraph_no: 1
+  - content:
+    - clauses: 3
+      content: ClickOS is proof that software solutions alone are enough to significantly
+        speed up virtual machine processing, to the point where the remaining overheads
+        are dwarfed by the ability to safely consolidate heterogeneous middlebox processing
+        onto the same hardware.
+      length: 38
+      modal_count: 0
+      modals: []
+      move: '1.6'
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: ClickOS speeds up networking for all Xen virtual machines by applying
+        well known optimizations including reducing the number of hypercalls, use
+        of batching, and removing unnecessary software layers and data paths.
+      length: 31
+      modal_count: 0
+      modals: []
+      move: '1.6'
+      sentence_no: 2
+      tense: SP
+    paragraph_no: 2
+  - content:
+    - clauses: 1
+      content: The major contribution of ClickOS is adopting Click as the main programming
+        abstraction for middleboxes and creating a tailor-made guest operating system
+        to run Click configurations.
+      length: 26
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 1
+      tense: SP
+    - clauses: 2
+      content: Such specialization allows us to optimize the runtime of middleboxes
+        to the point where they boot in milliseconds, while allowing us to support
+        a wide range of functionality.
+      length: 28
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 2
+      tense: SP
+    - clauses: 3
+      content: Our implementations of a software BRAS and a Carrier-Grade NAT show
+        that ClickOS delivers production-level performance when running real middlebox
+        functionality.
+      length: 21
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 3
+      tense: SP
+    paragraph_no: 3
+  - content:
+    - clauses: 2
+      content: In the end, we believe that ClickOS goes beyond replacing hardware
+        middleboxes with the software equivalent.
+      length: 16
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: Small, quick-to-boot VMs make it possible to offer personalized processing
+        (e.g., firewalls) to a large number of users with comparatively little hardware.
+      length: 22
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 2
+      tense: SP
+    - clauses: 1
+      content: Boot times in the order of milliseconds allow fast scaling of processing
+        dynamically (e.g., in response to a flash crowd) as well as migration with
+        negligible down-time.
+      length: 27
+      modal_count: 0
+      modals: []
+      move: '1.5'
+      sentence_no: 3
+      tense: SP
+    - clauses: 2
+      content: Finally, ClickOS could help with testing and deployment of new features
+        by directing subsets of flows to VMs running experimental code; issues with
+        the features would then only affect a small part of the traffic, and even
+        VMs crashing would not represent a major problem since they could be re-instantiated
+        in milliseconds.
+      length: 52
+      modal_count: 4
+      modals: [!!python/unicode 'could', !!python/unicode 'would']
+      move: '1.5'
+      sentence_no: 4
+      tense: SP
+    paragraph_no: 4
   introduction:
   - content:
     - clauses: 2
@@ -256,6 +384,154 @@ body:
       sentence_no: 3
       tense: SP
     paragraph_no: 7
+  result:
+  - content:
+    - clauses: 1
+      content: Having presented the ClickOS architecture, its components and their
+        optimization, we now provide a thorough base evaluation of the system.
+      length: 20
+      modal_count: 0
+      modals: []
+      move: '1.4'
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: After this, in Section 9, we will describe the implementation of several
+        middleboxes as well as performance results for them.
+      length: 20
+      modal_count: 1
+      modals: [!!python/unicode 'will']
+      move: '1.4'
+      sentence_no: 2
+      tense: SP
+    paragraph_no: 1
+  - content:
+    - clauses: 1
+      content: The ClickOS tests in this section were conducted using either (1) a
+        low-end, single-CPU Intel Xeon E3-1220 server with 4 cores at 3.1 GHz and
+        16 GB of DDR3-ECC RAM (most tests); or (2) a mid-range, single-CPU Intel Xeon
+        E5-1650 server with 6 cores at 3.2 GHz and 16 GB of DDR3-ECC RAM (switch and
+        scalability tests).
+      length: 57
+      modal_count: 0
+      modals: []
+      move: '1.1'
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: The ClickOS tests in this section were conducted using either (1) a
+        low-end, single-CPU Intel Xeon E3-1220 server with 4 cores at 3.1 GHz and
+        16 GB of DDR3-ECC RAM (most tests); or (2) a mid-range, single-CPU Intel Xeon
+        E5-1650 server with 6 cores at 3.2 GHz and 16 GB of DDR3-ECC RAM (switch and
+        scalability tests).
+      length: 57
+      modal_count: 0
+      modals: []
+      move: '1.1'
+      sentence_no: 2
+      tense: SP
+    - clauses: 1
+      content: All packet generation and rate measurements on an external box are
+        conducted using one or more of the low-end servers, and all NICs are connected
+        through direct cables.
+      length: 28
+      modal_count: 0
+      modals: []
+      move: '1.1'
+      sentence_no: 3
+      tense: SP
+    - clauses: 1
+      content: For reference, 10Gb/s equates to about 14.8 Mp/s for minimum-sized
+        packets and 822 Kp/s for maximum-sized packets.
+      length: 17
+      modal_count: 0
+      modals: []
+      move: '1.1'
+      sentence_no: 4
+      tense: SP
+    paragraph_no: 2
+  - content:
+    - clauses: 4
+      content: The goal is to ensure that the switching capacity is high so that it
+        does not become a bottleneck as more ClickOS VMs, cores and NICs are added
+        to the system.
+      length: 31
+      modal_count: 0
+      modals: []
+      move: '1.1'
+      sentence_no: 1
+      tense: SP
+    paragraph_no: 3
+  - content:
+    - clauses: 1
+      content: For this test we rely on a Linux (i.e., non-Xen) system.
+      length: 11
+      modal_count: 0
+      modals: []
+      move: '1.1'
+      sentence_no: 1
+      tense: SP
+    - clauses: 1
+      content: We use a user-space process running pkt-gen to generate packets towards
+        the switch, and from there onto a single 10 Gb/s Ethernet port; a separate,
+        low-end server then uses pkt-gen once again to receive the packets and to
+        measure rates.
+      length: 40
+      modal_count: 0
+      modals: []
+      move: '1.1'
+      sentence_no: 2
+      tense: SP
+    - clauses: 1
+      content: We then add another pkt-gen user-process and 10Gb/s Ethernet port to
+        test scalability.
+      length: 13
+      modal_count: 0
+      modals: []
+      move: '1.1'
+      sentence_no: 3
+      tense: SP
+    - clauses: 1
+      content: Each pkt-gen/port pair uses a single CPU core (so two in total for
+        the 20Gb/s test).
+      length: 16
+      modal_count: 0
+      modals: []
+      move: '1.1'
+      sentence_no: 4
+      tense: SP
+    paragraph_no: 4
+  - content:
+    - clauses: 1
+      content: For the single port pair case, the switch saturated the 10Gb/s pipe
+        for all packet sizes (Figure 4).
+      length: 18
+      modal_count: 0
+      modals: []
+      move: '1.3'
+      sentence_no: 1
+      tense: SD
+    - clauses: 2
+      content: For the two port pairs case, the switch fills up the entire cumulative
+        20Gb/s pipe for all packet sizes except minimum-sized ones, for which it achieves
+        70% of line rate.
+      length: 31
+      modal_count: 0
+      modals: []
+      move: '3.1'
+      sentence_no: 2
+      tense: SP
+    - clauses: 3
+      content: Finally, we also conducted receive experiments (where packets are sent
+        from an external box towards the system hosting the switch) which resulted
+        in roughly similar rates.
+      length: 26
+      modal_count: 0
+      modals: []
+      move: '3.1'
+      sentence_no: 3
+      tense: SP
+    paragraph_no: 4
 meta:
   author: ["Jo\xE3o Martins", Mohamed Ahmed, Costin Raiciu, Vladimir Andrei Olteanu,
     Michio Honda, Roberto Bifulco, Felipe Huici]
